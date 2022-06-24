@@ -1,0 +1,39 @@
+.navigation {
+  &__list {
+    display: flex;
+    gap: 50px;
+  }
+  &__item {
+    position: relative;
+  }
+  &__link {
+    transition: color var(--transition);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--title-text-color);
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
+  }
+  &__link.current {
+    color: var(--accent-color);
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 4px;
+      width: 100%;
+      border-radius: 2px;
+      background-color: var(--accent-color);
+    }
+  }
+}
